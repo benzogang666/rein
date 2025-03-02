@@ -1,5 +1,6 @@
 import "./Guides.css";
 
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { NavLink } from "react-router";
 
@@ -12,6 +13,14 @@ const Guides = ({ onClose }) => {
     { name: "Отзывы", path: "/reviews" },
     { name: "Бланк", path: "/receipt" },
   ];
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden"; // Отключаем прокрутку
+
+    return () => {
+      document.body.style.overflow = ""; // Восстанавливаем прокрутку при размонтировании
+    };
+  }, []);
 
   return createPortal(
     <>
