@@ -1,0 +1,56 @@
+.contacts {
+  display: grid;
+  gap: 30px;
+}
+
+.social-networks {
+  display: grid;
+  gap: 10px;
+}
+
+.social-networks-storage {
+  font-size: 30px;
+  display: grid;
+  gap: 20px;
+  grid-auto-flow: column;
+  justify-content: start;
+}
+
+.social-network {
+  color: #fff;
+  padding: 10px;
+  background: #303030;
+  border-radius: 15px;
+}
+
+.branches {
+  display: grid;
+  gap: 10px;
+}
+
+.branches-storage {
+  display: grid;
+  gap: 20px;
+}
+
+.branch {
+  display: grid;
+  gap: 10px;
+  grid-auto-columns: 10px auto;
+  grid-auto-rows: 100px;
+  grid-auto-flow: column;
+  align-items: center;
+  border: 1px solid #303030;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.branch-status {
+  min-height: 100%;
+  background: #635f95;
+}
+
+.branch-data {
+  display: grid;
+  gap: 10px;
+}

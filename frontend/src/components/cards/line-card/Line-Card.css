@@ -1,0 +1,57 @@
+.line-cards {
+  display: grid;
+  gap: 10px;
+  grid-auto-flow: row;
+}
+
+.line-card {
+  padding: 10px;
+  display: grid;
+  gap: 10px;
+  grid-auto-columns: 90px auto;
+  grid-auto-rows: 90px;
+  grid-auto-flow: column;
+  background: #e0e0e0;
+  border-radius: 15px;
+}
+
+.l-c-image {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.l-c-data {
+  display: grid;
+  align-content: space-between;
+  position: relative;
+}
+
+.l-c-remove {
+  color: #303030;
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.l-c-expenses {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.l-c-counter {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  place-items: center;
+}
+
+.l-c-counter-button {
+  color: #303030;
+  font-size: 25px;
+}

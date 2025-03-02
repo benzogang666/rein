@@ -1,0 +1,59 @@
+.solo-card {
+  min-height: 100%;
+  display: grid;
+  gap: 10px;
+  grid-auto-rows: 50% 1fr auto;
+  align-content: space-between;
+}
+
+.s-c-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #303030;
+  border-radius: 15px;
+}
+
+.s-c-data {
+  display: grid;
+  gap: 10px;
+  grid-auto-rows: auto 1fr;
+  overflow: scroll;
+}
+
+.s-c-named {
+  font-size: 25px;
+}
+
+.s-c-details {
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.s-c-expenses {
+  display: grid;
+  gap: 10px;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  background: #303030;
+  border-radius: 100px;
+}
+
+.s-c-price {
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  display: grid;
+  place-items: center;
+}
+
+.s-c-counter {
+  color: #fff;
+  font-size: 25px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-around;
+  place-items: center;
+}

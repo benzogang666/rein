@@ -1,0 +1,15 @@
+.header {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-navigate {
+  color: #303030;
+  font-size: 25px;
+}
+
+.header-logo {
+  color: #303030;
+}

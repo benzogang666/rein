@@ -1,0 +1,11 @@
+.navigate {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.navigate-navigate {
+  color: #303030;
+  font-size: 25px;
+}

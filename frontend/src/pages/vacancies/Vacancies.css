@@ -1,0 +1,37 @@
+.vacancies {
+  display: grid;
+  gap: 20px;
+}
+
+.vacancies-label {
+  padding: 10px;
+  border: 1px solid #303030;
+  border-radius: 15px;
+}
+
+.vacancies-storage {
+  display: grid;
+  gap: 20px;
+}
+
+.vacancy {
+  display: grid;
+  gap: 10px;
+  grid-auto-columns: 10px auto;
+  grid-auto-rows: 100px;
+  grid-auto-flow: column;
+  align-items: center;
+  border: 1px solid #303030;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.vacancy-status {
+  min-height: 100%;
+  background: #f14949;
+}
+
+.vacancy-data {
+  display: grid;
+  gap: 10px;
+}

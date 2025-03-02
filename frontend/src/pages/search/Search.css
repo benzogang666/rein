@@ -1,0 +1,36 @@
+.search {
+  display: grid;
+  gap: 20px;
+}
+
+.search-dashboard {
+  padding: 20px;
+  display: grid;
+  gap: 10px;
+  grid-auto-columns: 1fr auto;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #000;
+  border-radius: 15px;
+}
+
+.search-field {
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
+
+.search-clear {
+  font-size: 25px;
+}
+
+.search-storage {
+  display: grid;
+  gap: 30px;
+}
+
+.search-storage-card {
+  display: grid;
+  gap: 10px;
+}

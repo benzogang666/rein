@@ -1,0 +1,48 @@
+.receipt {
+  display: grid;
+  gap: 30px;
+}
+
+.receipt-label {
+  padding: 10px;
+  display: grid;
+  gap: 10px;
+  border: 1px solid #000;
+  border-radius: 15px;
+}
+
+.receipt-storage {
+  padding: 0 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.receipt-card {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+
+.receipt-data {
+  display: grid;
+  gap: 10px;
+}
+
+.receipt-named {
+  font-size: 18px;
+}
+
+.receipt-quantity {
+  color: #303030;
+}
+
+.receipt-expenses {
+  display: grid;
+  gap: 10px;
+  justify-items: end;
+}
+
+.receipt-stripe {
+  border-bottom: 1px solid #666;
+  border-radius: 100px;
+}
