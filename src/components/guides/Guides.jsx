@@ -6,7 +6,7 @@ import { NavLink } from "react-router";
 
 const Guides = ({ onClose }) => {
   const guides = [
-    { name: "Меню", path: "/menu" },
+    { name: "Меню", path: "/menu/fastfood/pizza" },
     { name: "Вакансии", path: "/vacancies" },
     { name: "Контакты", path: "/contacts" },
     { name: "Корзина", path: "/cart" },
