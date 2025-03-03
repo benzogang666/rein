@@ -40,13 +40,13 @@
   border-radius: 100px;
   overflow: scroll;
   scrollbar-width: none;
-  white-space: nowrap;
 }
 
 .sub-category {
   padding: 5px 20px;
   background: #dedede;
   border-radius: 100px;
+  white-space: nowrap;
 }
 
 .active-sub-category {
