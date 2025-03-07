@@ -1,6 +1,6 @@
 .nomercy {
   padding: 0px 0px 10px 0px;
-  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom, 20px);
   display: grid;
   align-items: center;
   justify-content: center;
