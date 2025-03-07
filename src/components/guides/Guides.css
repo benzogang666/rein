@@ -29,6 +29,14 @@
 
 .guide {
   padding: 10px;
-  background: #505050;
+  display: grid;
+  gap: 10px;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: start;
   border-radius: 5px;
+}
+
+.guide-icon {
+  font-size: 22px;
 }
