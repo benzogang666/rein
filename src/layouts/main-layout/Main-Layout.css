@@ -1,6 +1,6 @@
 .main-layout {
   padding: 0 10px;
-  min-height: 100%;
+  min-height: 100vh;
   display: grid;
   gap: 10px;
   grid-auto-rows: auto 1fr auto;

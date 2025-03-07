@@ -47,6 +47,7 @@
   background: #dedede;
   border-radius: 100px;
   white-space: nowrap;
+  scrollbar-width: none;
 }
 
 .active-sub-category {

@@ -34,9 +34,8 @@ const Search = () => {
 
         <div className="search-storage">
           {filteredProducts.map(({ name, items }) => (
-            <div key={name}>
+            <div className="search-storage-section" key={name}>
               <div>{name}</div>
-              <br />
               <MC round={items} />
             </div>
           ))}
