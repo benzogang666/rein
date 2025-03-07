@@ -39,7 +39,12 @@
   justify-content: start;
   border-radius: 100px;
   overflow: scroll;
-  scrollbar-width: none;
+  -ms-overflow-style: none; /* Для Internet Explorer и Edge */
+  scrollbar-width: none; /* Для Firefox */
+}
+
+.sub-categories::-webkit-scrollbar {
+  display: none; /* Для Chrome, Safari и Opera */
 }
 
 .sub-category {
