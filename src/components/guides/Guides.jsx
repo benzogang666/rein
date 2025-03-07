@@ -15,12 +15,36 @@ import { NavLink } from "react-router";
 
 const Guides = ({ onClose }) => {
   const guides = [
-    { name: "Меню", icon: <IoBookOutline />, path: "/menu" },
-    { name: "Вакансии", icon: <IoPeopleOutline />, path: "/vacancies" },
-    { name: "Контакты", icon: <IoMapOutline />, path: "/contacts" },
-    { name: "Корзина", icon: <IoCartOutline />, path: "/cart" },
-    { name: "Отзывы", icon: <IoChatbubbleEllipsesOutline />, path: "/reviews" },
-    { name: "Бланк", icon: <IoReaderOutline />, path: "/receipt" },
+    {
+      name: "Меню",
+      icon: <IoBookOutline className="guide-icon" />,
+      path: "/menu",
+    },
+    {
+      name: "Вакансии",
+      icon: <IoPeopleOutline className="guide-icon" />,
+      path: "/vacancies",
+    },
+    {
+      name: "Контакты",
+      icon: <IoMapOutline className="guide-icon" />,
+      path: "/contacts",
+    },
+    {
+      name: "Корзина",
+      icon: <IoCartOutline className="guide-icon" />,
+      path: "/cart",
+    },
+    {
+      name: "Отзывы",
+      icon: <IoChatbubbleEllipsesOutline className="guide-icon" />,
+      path: "/reviews",
+    },
+    {
+      name: "Бланк",
+      icon: <IoReaderOutline className="guide-icon" />,
+      path: "/receipt",
+    },
   ];
 
   useEffect(() => {
@@ -39,8 +63,7 @@ const Guides = ({ onClose }) => {
           <div className="guides-storage">
             {guides.map(({ name, icon, path }) => (
               <NavLink key={path} className="guide" to={path} onClick={onClose}>
-                <div className="guide-icon">{icon}</div>
-                <div>{name}</div>
+                {icon} <div>{name}</div>
               </NavLink>
             ))}
           </div>
