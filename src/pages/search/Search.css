@@ -34,3 +34,11 @@
   display: grid;
   gap: 10px;
 }
+
+.search-storage-section-named {
+  display: grid;
+  gap: 10px;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: start;
+}

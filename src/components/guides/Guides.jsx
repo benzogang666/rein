@@ -7,6 +7,7 @@ import {
   IoCartOutline,
   IoChatbubbleEllipsesOutline,
   IoReaderOutline,
+  IoCloseCircleOutline,
 } from "react-icons/io5";
 
 import { useEffect } from "react";
@@ -68,6 +69,7 @@ const Guides = ({ onClose }) => {
             ))}
           </div>
           <div className="guide" onClick={onClose}>
+            <IoCloseCircleOutline className="guide-icon" />
             Закрыть
           </div>
         </div>
