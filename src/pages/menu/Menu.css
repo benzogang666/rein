@@ -39,12 +39,12 @@
   justify-content: start;
   border-radius: 100px;
   overflow: scroll;
-  -ms-overflow-style: none; /* Для Internet Explorer и Edge */
-  scrollbar-width: none; /* Для Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .sub-categories::-webkit-scrollbar {
-  display: none; /* Для Chrome, Safari и Opera */
+  display: none;
 }
 
 .sub-category {
@@ -70,4 +70,21 @@
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
+}
+
+.col-cards {
+  display: grid;
+  gap: 20px;
+}
+
+.row-cards {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.mini-cards {
+  display: grid;
+  gap: 20px;
+  grid-auto-flow: row;
 }

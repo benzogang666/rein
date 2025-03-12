@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router";
 
 import Guides from "../components/guides/Guides";
 
+import Layouts from "../layouts/Layouts";
+
 import Menu_Layout from "../layouts/menu-layout/Menu-Layout";
 import Menu from "../pages/menu/Menu";
 import Product from "../pages/product/Product";
@@ -21,53 +23,59 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <Menu_Layout />,
+    element: <Layouts />,
     children: [
       {
         path: "/",
-        element: <Menu />,
+        element: <Menu_Layout />,
+        children: [
+          {
+            path: "/",
+            element: <Menu />,
+          },
+          {
+            path: "menu",
+            element: <Menu />,
+          },
+          {
+            path: "menu/:category",
+            element: <Menu />,
+          },
+          {
+            path: "menu/:category/:subcategory",
+            element: <Menu />,
+          },
+        ],
       },
       {
-        path: "menu",
-        element: <Menu />,
-      },
-      {
-        path: "menu/:category",
-        element: <Menu />,
-      },
-      {
-        path: "menu/:category/:subcategory",
-        element: <Menu />,
-      },
-    ],
-  },
-  {
-    path: "/",
-    element: <Main_Layout />,
-    children: [
-      {
-        path: "cart",
-        element: <Cart />,
-      },
-      {
-        path: "contacts",
-        element: <Contacts />,
-      },
-      {
-        path: "receipt",
-        element: <Receipt />,
-      },
-      {
-        path: "reviews",
-        element: <Reviews />,
-      },
-      {
-        path: "search",
-        element: <Search />,
-      },
-      {
-        path: "vacancies",
-        element: <Vacancies />,
+        path: "/",
+        element: <Main_Layout />,
+        children: [
+          {
+            path: "cart",
+            element: <Cart />,
+          },
+          {
+            path: "contacts",
+            element: <Contacts />,
+          },
+          {
+            path: "receipt",
+            element: <Receipt />,
+          },
+          {
+            path: "reviews",
+            element: <Reviews />,
+          },
+          {
+            path: "search",
+            element: <Search />,
+          },
+          {
+            path: "vacancies",
+            element: <Vacancies />,
+          },
+        ],
       },
     ],
   },

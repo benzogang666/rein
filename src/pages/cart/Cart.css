@@ -1,6 +1,6 @@
 .cart {
   display: grid;
-  gap: 10px;
+  gap: 20px;
 }
 
 .cart-dashboard {
@@ -20,4 +20,10 @@
 .cart-device {
   color: #303030;
   font-size: 25px;
+}
+
+.line-cards {
+  display: grid;
+  gap: 20px;
+  grid-auto-flow: row;
 }

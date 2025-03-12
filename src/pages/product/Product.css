@@ -10,11 +10,12 @@
   height: 100%;
   display: grid;
   gap: 10px;
+  align-content: start;
   grid-auto-rows: 50% 1fr auto;
 }
 
 .p-s-image {
-  background: #9b22e6;
+  background: #754295;
   border-radius: 15px;
 }
 

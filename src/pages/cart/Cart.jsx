@@ -26,7 +26,9 @@ const Cart = () => {
           <IoTrash className="cart-device" onClick={() => clearCart()} />
         </div>
         <div className="cart-storage">
-          <LC round={cart} />
+          <div className="line-cards">
+            <LC round={cart} />
+          </div>
         </div>
       </div>
     </>

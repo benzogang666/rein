@@ -1,6 +1,6 @@
 import "./Menu.css";
 import { LuLayoutGrid, LuEqual, LuLayoutList } from "react-icons/lu";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import { useProducts } from "../../contexts/productsContext/productsContext";
 import CC from "../../components/cards/col-card/Col-Card";
@@ -22,23 +22,12 @@ const Menu = () => {
       });
   }, [category, subcategory, firstCategory, firstSubcategory, navigate]);
 
-  const currentCategory =
-    products.categories.find((c) => c.slug === category) || firstCategory;
-  const currentSubCategory =
-    currentCategory?.subcategories.find((s) => s.slug === subcategory) ||
-    firstSubcategory;
   const [view, setView] = useState("mini");
 
-  const renderView = useMemo(() => {
-    if (!currentSubCategory) return null;
-    return view === "col" ? (
-      <CC round={currentSubCategory.items} />
-    ) : view === "row" ? (
-      <RC round={currentSubCategory.items} />
-    ) : (
-      <MC round={currentSubCategory.items} />
-    );
-  }, [view, currentSubCategory]);
+  const section =
+    products.categories
+      .find((c) => c.slug === category)
+      ?.subcategories.find((s) => s.slug === subcategory)?.items || [];
 
   return (
     <div className="menu">
@@ -59,21 +48,19 @@ const Menu = () => {
         ))}
       </div>
       <div className="sub-categories">
-        {currentCategory?.subcategories.map((line) => (
-          <div
-            key={line.slug}
-            className={`sub-category ${
-              currentSubCategory?.slug === line.slug
-                ? "active-sub-category"
-                : ""
-            }`}
-            onClick={() =>
-              navigate(`/menu/${currentCategory.slug}/${line.slug}`)
-            }
-          >
-            {line.name}
-          </div>
-        ))}
+        {products.categories
+          .find((c) => c.slug === category)
+          ?.subcategories.map((line) => (
+            <div
+              key={line.slug}
+              className={`sub-category ${
+                subcategory === line.slug ? "active-sub-category" : ""
+              }`}
+              onClick={() => navigate(`/menu/${category}/${line.slug}`)}
+            >
+              {line.name}
+            </div>
+          ))}
       </div>
       <div className="menu-products">
         <div className="menu-product-views">
@@ -81,7 +68,21 @@ const Menu = () => {
           <LuEqual onClick={() => setView("mini")} />
           <LuLayoutGrid onClick={() => setView("row")} />
         </div>
-        <div className="menu-product-cards">{renderView}</div>
+        <div className="menu-product-cards">
+          {view === "col" ? (
+            <div className="col-cards">
+              <CC round={section} />
+            </div>
+          ) : view === "row" ? (
+            <div className="row-cards">
+              <RC round={section} />
+            </div>
+          ) : (
+            <div className="mini-cards">
+              <MC round={section} />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
