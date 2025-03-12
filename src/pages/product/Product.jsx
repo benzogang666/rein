@@ -1,5 +1,7 @@
 import "./Product.css";
 
+import { IoRemove, IoAdd } from "react-icons/io5";
+
 import { useParams } from "react-router";
 
 import { useProducts } from "../../contexts/productsContext/productsContext";
@@ -24,9 +26,9 @@ const Product = () => {
             <div className="p-s-details">{line.details}</div>
           </div>
           <div className="p-s-counter">
-            <div>-</div>
+            <IoRemove />
             <div>6</div>
-            <div>+</div>
+            <IoAdd />
           </div>
         </div>
         <Nomercy />
