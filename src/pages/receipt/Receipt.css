@@ -1,6 +1,6 @@
 .receipt {
   display: grid;
-  gap: 30px;
+  gap: 20px;
 }
 
 .receipt-label {
@@ -12,7 +12,6 @@
 }
 
 .receipt-storage {
-  padding: 0 10px;
   display: grid;
   gap: 10px;
 }

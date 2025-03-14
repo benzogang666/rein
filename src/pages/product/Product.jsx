@@ -1,16 +1,17 @@
 import "./Product.css";
 
-import { IoRemove, IoAdd } from "react-icons/io5";
+import { IoRemoveCircleOutline, IoAddCircleOutline } from "react-icons/io5";
 
 import { useParams } from "react-router";
 
+import { useCart } from "../../contexts/cartContext/CartContext";
 import { useProducts } from "../../contexts/productsContext/productsContext";
-
-import Navigate from "../../components/navigate/Navigate";
-import Nomercy from "../../components/nomercy/Nomercy";
 
 const Product = () => {
   const { product } = useParams();
+
+  const { addToCart, decreaseQuantity, getProductQuantity } = useCart();
+
   const line = useProducts()
     .categories.flatMap((c) => c.subcategories.flatMap((s) => s.items))
     .find((i) => i.id === product);
@@ -18,20 +19,17 @@ const Product = () => {
   return (
     <>
       <div className="product">
-        <Navigate />
-        <div className="product-storage">
-          <div className="p-s-image"></div>
-          <div className="p-s-data">
-            <div className="p-s-named">{line.name}</div>
-            <div className="p-s-details">{line.details}</div>
-          </div>
-          <div className="p-s-counter">
-            <IoRemove />
-            <div>6</div>
-            <IoAdd />
+        <div className="p-t-image"></div>
+        <div className="p-t-data">
+          <div className="p-t-named">{line.name}</div>
+          <div className="p-t-cooking-time">{line.cookingTime} минут</div>
+          <div className="p-t-details">{line.details}</div>
+          <div className="p-t-counter">
+            <IoRemoveCircleOutline onClick={() => decreaseQuantity(line.id)} />
+            <div>{getProductQuantity(line.id)}</div>
+            <IoAddCircleOutline onClick={() => addToCart(line)} />
           </div>
         </div>
-        <Nomercy />
       </div>
     </>
   );

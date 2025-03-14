@@ -11,7 +11,11 @@ export const CartProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    if (cart.length > 0) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    } else {
+      localStorage.removeItem("cart");
+    }
   }, [cart]);
 
   const addToCart = (product) => {
@@ -28,13 +32,16 @@ export const CartProvider = ({ children }) => {
 
   const decreaseQuantity = (productId) => {
     setCart((prevCart) =>
-      prevCart
-        .map((item) =>
-          item.id === productId && item.quantity > 1
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
-        )
-        .filter((item) => item.quantity > 0)
+      prevCart.reduce((acc, item) => {
+        if (item.id === productId) {
+          if (item.quantity > 1) {
+            acc.push({ ...item, quantity: item.quantity - 1 });
+          }
+        } else {
+          acc.push(item);
+        }
+        return acc;
+      }, [])
     );
   };
 
@@ -42,7 +49,10 @@ export const CartProvider = ({ children }) => {
     cart.find((item) => item.id === productId)?.quantity || 0;
 
   const getTotalPrice = () =>
-    cart.reduce((total, item) => total + (item.price ?? 0) * item.quantity, 0);
+    cart.reduce(
+      (total, item) => total + (Number(item.price) || 0) * item.quantity,
+      0
+    );
 
   const removeFromCart = (productId) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
